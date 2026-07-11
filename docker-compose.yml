@@ -1,0 +1,31 @@
+# Docker Compose para PostgreSQL 16
+# Sistema POS - Saman Digital
+
+version: '3.8'
+
+services:
+  # Servicio de base de datos PostgreSQL 16
+  saman-db:
+    image: postgres:16
+    container_name: saman-db
+    restart: unless-stopped
+    
+    # Variables de entorno para la configuración de PostgreSQL
+    environment:
+      POSTGRES_USER: saman
+      POSTGRES_PASSWORD: saman123
+      POSTGRES_DB: saman_digital
+    
+    # Mapeo de puertos: host:contenedor
+    ports:
+      - "5432:5432"
+    
+    # Volumen para persistencia de datos
+    # Los datos se guardan en un volumen llamado 'saman-postgres-data'
+    volumes:
+      - saman-postgres-data:/var/lib/postgresql/data
+
+# Definición de volúmenes
+volumes:
+  saman-postgres-data:
+    driver: local
