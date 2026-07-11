@@ -1,14 +1,53 @@
-@"
-node_modules/
-backend/node_modules/
-frontend/node_modules/
+```
+# Containers
+.dockerenv
+.dockerinit
+*.dockerignore
+
+# Docker Compose
+.docker-compose/
+.docker-compose.*
+!docker-compose.yml
+
+# Temporary files
+*.tmp
+*.temp
+*~
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment
 .env
 .env.local
-dist/
+*.env.*
+
+# Dependencies (if any are detected later)
+node_modules/
+venv/
+.venv/
+__pycache__/
+*.egg-info/
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Build directories
 build/
-*.log
+dist/
+*.egg
+*.pyc
+*.pyo
+*.pyd
+.MF
+
+# IDE specific
 .vscode/
 .idea/
-.DS_Store
-pgdata/
-"@ | Out-File -FilePath .gitignore -Encoding utf8
+*.swp
+*.swo
+.settings/
+.metadata/
+```
